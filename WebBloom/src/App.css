@@ -68,7 +68,7 @@ h1,h2,h3,p { margin: 0; } h1,h2,h3 { font-family: Outfit, sans-serif; } em { fon
   color: #74a7ff;
   margin-left: 8px;
 }
-.hero-section { min-height: 790px; max-width: 1440px; margin:auto; position:relative; display:flex; align-items:center; justify-content:center; padding: 150px 48px 90px; isolation:isolate; }
+.hero-section { min-height: 790px; max-width: 1440px; margin:auto; position:relative; display:flex; align-items:center; justify-content:center; isolation:isolate; }
 .hero-grid { position:absolute; inset:0; opacity:.24; background-image: linear-gradient(rgba(123,154,224,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(123,154,224,.07) 1px,transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(ellipse at center,black,transparent 70%); z-index:-2; }
 .hero-orb { position:absolute; border-radius:50%; filter:blur(25px); z-index:-1; } .orb-one { width:430px;height:430px;background:#163ca2;opacity:.34;right:10%;top:14%; } .orb-two { width:310px;height:310px;background:#0d92dc;opacity:.17;left:8%;bottom:12%; }
 .hero-content { width: 690px; max-width:100%; text-align:center; } .eyebrow { display:flex; justify-content:center; align-items:center; gap:9px; color:#9aa9cf; margin-bottom:24px; } .status-dot { width:7px; height:7px; border-radius:50%; background:#72a7ff; box-shadow:0 0 12px #5c96ff; }
