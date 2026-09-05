@@ -1,2 +1,61 @@
-const reasons=[['01','Direct communication','The people on the call are the people making the work.'],['02','Faster execution','Fewer handoffs mean ideas keep their momentum.'],['03','Modern by default','We build for how the web feels now, not five years ago.'],['04','Personal attention','Your project gets our full focus, not a ticket number.']]
-export function WhyWebloom(){return <section className="why section"><div className="section-number">05 / WHY WEBLOOM</div><div className="why-title"><h2>Small enough to care.<br/><em>Skilled enough to deliver.</em></h2><p>The sweet spot between an independent spirit and an exacting digital practice.</p></div><div className="reason-list">{reasons.map(([no,title,text])=><div className="reason" key={no}><span>{no}</span><h3>{title}</h3><p>{text}</p><b>+</b></div>)}</div></section>}
+const reasons = [
+  [
+    '01',
+    'Direct communication',
+    'The people on the call are the people making the work.'
+  ],
+  [
+    '02',
+    'Faster execution',
+    'Fewer handoffs mean ideas keep their momentum.'
+  ],
+  [
+    '03',
+    'Modern by default',
+    'We build for how the web feels now, not five years ago.'
+  ],
+  [
+    '04',
+    'Personal attention',
+    'Your project gets our full focus, not a ticket number.'
+  ]
+]
+
+export function WhyWebloom() {
+  return (
+    <section className="why section">
+      
+      <div className="section-number">
+        05 / WHY WEBLOOM
+      </div>
+
+      <div className="why-title">
+        <h2>
+          Small enough to care.
+          <br />
+          <em>Skilled enough to deliver.</em>
+        </h2>
+
+        <p>
+          The sweet spot between an independent spirit and an exacting
+          digital practice.
+        </p>
+      </div>
+
+      <div className="reason-list">
+        {reasons.map(([no, title, text]) => (
+          <div className="reason" key={no}>
+            
+            <span>{no}</span>
+
+            <h3>{title}</h3>
+
+            <p>{text}</p>
+
+          </div>
+        ))}
+      </div>
+
+    </section>
+  )
+}
