@@ -488,13 +488,13 @@ em {
 
 .about-facts span {
   color: #668bed;
-  font: 10px 'DM Mono';
+  font: 15px 'DM Mono';
   display: block;
-  margin-bottom: 20px
+  margin-bottom: 5px
 }
 
 .about-facts b {
-  font: 600 12px/1.35 Outfit;
+  font: 600 13px/1.35 Outfit;
   letter-spacing: .08em
 }
 
