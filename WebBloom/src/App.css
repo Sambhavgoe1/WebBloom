@@ -463,7 +463,8 @@ em {
   color: #e1e9ff;
   font-size: 12px;
   font-weight: 700;
-  gap: 12px
+  gap: 12px;
+  text-decoration: none
 }
 
 .under-link b {
