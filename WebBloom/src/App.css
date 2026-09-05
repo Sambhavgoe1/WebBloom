@@ -463,7 +463,7 @@ em {
   color: #e1e9ff;
   font-size: 12px;
   font-weight: 700;
-  gap: 36px
+  gap: 12px
 }
 
 .under-link b {
@@ -504,7 +504,6 @@ em {
 }
 
 .work {
-  padding-top: 160px
 }
 
 .work-heading {
