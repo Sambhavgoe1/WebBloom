@@ -533,12 +533,12 @@ em {
 }
 
 .project-preview {
-  height: 465px;
-  border-radius: 14px;
+  width: 100%;
   overflow: hidden;
-  padding: 17px 20px;
-  position: relative;
-  transition: transform .5s, box-shadow .5s
+  border-radius: 18px;
+  padding: 0;
+  background: #080d1d;
+  cursor: pointer;
 }
 
 .project:hover .project-preview {
@@ -1331,23 +1331,9 @@ footer a:hover {
 }
 
 .website-video {
-  width: 100%;
-  height: 420px;
-  overflow: hidden;
-  background: #0b1020;
-}
-
-.website-video video {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  object-position: top;
-}
-.website-video {
   position: relative;
   width: 100%;
-  height: 420px;
+  height: 520px;
   overflow: hidden;
   background: #050816;
 }
@@ -1360,49 +1346,509 @@ footer a:hover {
   object-position: top;
 }
 
-.video-play-button {
+.video-control-button {
   position: absolute;
-  top: 50%;
+
   left: 50%;
+  top: 50%;
 
   transform: translate(-50%, -50%);
 
   width: 72px;
   height: 72px;
 
-  border: 1px solid rgba(150, 190, 255, 0.35);
   border-radius: 50%;
 
-  background: rgba(20, 42, 95, 0.75);
-  backdrop-filter: blur(15px);
+  border: 1px solid rgba(150, 190, 255, 0.4);
+
+  background: rgba(10, 20, 50, 0.72);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 
   color: white;
 
   display: grid;
   place-items: center;
 
+  font-size: 22px;
+
   cursor: pointer;
 
-  z-index: 5;
+  z-index: 10;
 
   box-shadow:
-    0 10px 40px rgba(0, 0, 0, 0.4),
-    0 0 35px rgba(70, 120, 255, 0.3);
+    0 10px 35px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(70, 120, 255, 0.25);
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.video-play-button:hover {
+.video-control-button:hover {
   transform: translate(-50%, -50%) scale(1.1);
 
-  background: rgba(60, 110, 230, 0.9);
+  background: rgba(55, 100, 220, 0.9);
 
   box-shadow:
-    0 15px 50px rgba(0, 0, 0, 0.5),
-    0 0 50px rgba(70, 120, 255, 0.5);
+    0 15px 45px rgba(0, 0, 0, 0.5),
+    0 0 45px rgba(70, 120, 255, 0.45);
+}
+/* =========================
+   WORK SECTION
+========================= */
+
+.work {
+  padding-top: 160px;
 }
 
-.video-play-button span {
+.work-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+.work-heading h2 {
+  margin-top: 24px;
+  font-size: clamp(52px, 6vw, 92px);
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+}
+
+.work-heading-copy {
+  max-width: 360px;
+}
+
+.work-heading-copy p {
+  color: #94a2c1;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.work-heading-copy span {
+  display: block;
+  margin-top: 22px;
+  font: 10px 'DM Mono', monospace;
+  letter-spacing: 0.12em;
+  color: #5f7fc8;
+}
+
+
+/* =========================
+   PROJECT LIST
+========================= */
+
+.work-showcase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 120px;
+}
+
+.work-project {
+  width: 100%;
+}
+
+.work-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  border-radius: 20px;
+
+  cursor: pointer;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20, 38, 85, 0.8),
+      rgba(6, 10, 28, 1)
+    );
+
+  border: 1px solid rgba(130, 165, 255, 0.16);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.5s ease,
+    border-color 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.work-image-wrap:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(110, 155, 255, 0.45);
+
+  box-shadow:
+    0 45px 120px rgba(0, 0, 0, 0.5),
+    0 0 70px rgba(55, 105, 230, 0.12);
+}
+
+
+/* =========================
+   BROWSER BAR
+========================= */
+
+.browser-bar {
+  height: 48px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 20px;
+
+  background: rgba(8, 14, 35, 0.95);
+
+  border-bottom:
+    1px solid rgba(150, 185, 255, 0.1);
+}
+
+.browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.browser-dots span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #506287;
+}
+
+.browser-label {
+  font: 10px 'DM Mono', monospace;
+
+  letter-spacing: 0.12em;
+
+  color: #64759b;
+}
+
+.browser-arrow {
+  color: #8eb6ff;
+
+  font-size: 18px;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.work-image {
+  height: 580px;
+
+  overflow: hidden;
+
+  background: #080d1d;
+}
+
+.work-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: top;
+
+  display: block;
+
+  transition:
+    transform 1.2s cubic-bezier(.2,.7,.2,1);
+}
+
+.work-image-wrap:hover .work-image img {
+  transform: scale(1.035);
+}
+
+
+/* =========================
+   HOVER OVERLAY
+========================= */
+
+.work-hover {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 18px;
+
+  opacity: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent 20%,
+      rgba(4, 8, 22, 0.78)
+    );
+
+  transition: opacity 0.4s ease;
+}
+
+.work-image-wrap:hover .work-hover {
+  opacity: 1;
+}
+
+.work-hover span {
+  font: 11px 'DM Mono', monospace;
+
+  letter-spacing: 0.15em;
+
+  color: white;
+}
+
+.work-hover-arrow {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: #6d9dff;
+
+  color: #06112d;
+
   font-size: 20px;
-  margin-left: 4px;
+}
+
+
+/* =========================
+   PROJECT INFORMATION
+========================= */
+
+.work-project-info {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 1fr)
+    minmax(300px, 0.8fr)
+    70px;
+
+  gap: 50px;
+
+  align-items: start;
+
+  padding: 30px 10px 0;
+}
+
+.work-project-main {
+  display: flex;
+
+  gap: 18px;
+
+  align-items: baseline;
+}
+
+.work-number {
+  font: 10px 'DM Mono', monospace;
+
+  color: #5f82d0;
+
+  letter-spacing: 0.1em;
+}
+
+.work-project-info h3 {
+  font-size: clamp(25px, 3vw, 40px);
+
+  letter-spacing: -0.045em;
+
+  font-weight: 600;
+}
+
+.work-project-description {
+  max-width: 430px;
+}
+
+.work-project-description .project-type {
+  margin-bottom: 12px;
+
+  font: 10px 'DM Mono', monospace;
+
+  letter-spacing: 0.1em;
+
+  color: #7397df;
+}
+
+.work-project-description p:last-child {
+  color: #8796b5;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================
+   PROJECT LINK
+========================= */
+
+.work-link {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  border:
+    1px solid rgba(130, 170, 255, 0.25);
+
+  color: #a9c6ff;
+
+  font-size: 22px;
+
+  text-decoration: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.work-link:hover {
+  background: #8eb6ff;
+
+  color: #07132e;
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================
+   BOTTOM CTA
+========================= */
+
+.work-bottom-message {
+  margin-top: 130px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  color: #8291b3;
+}
+
+.work-line {
+  height: 1px;
+
+  flex: 1;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(90, 125, 220, 0.5),
+      transparent
+    );
+}
+
+.work-bottom-message p {
+  font: 11px 'DM Mono', monospace;
+
+  letter-spacing: 0.12em;
+
+  white-space: nowrap;
+}
+
+.work-bottom-message em {
+  color: #82abff;
+}
+
+.work-bottom-message a {
+  color: #c8d8ff;
+
+  font: 11px 'DM Mono', monospace;
+
+  letter-spacing: 0.1em;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+}
+
+.work-bottom-message a:hover {
+  color: #7da8ff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .work {
+    padding-top: 100px;
+  }
+
+  .work-heading {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    margin-bottom: 65px;
+
+    gap: 30px;
+  }
+
+  .work-heading h2 {
+    font-size: 56px;
+  }
+
+  .work-showcase {
+    gap: 80px;
+  }
+
+  .work-image {
+    height: 360px;
+  }
+
+  .browser-label {
+    display: none;
+  }
+
+  .work-project-info {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+
+    padding: 22px 0 0;
+  }
+
+  .work-link {
+    display: none;
+  }
+
+  .work-bottom-message {
+    margin-top: 80px;
+
+    flex-wrap: wrap;
+  }
+
+  .work-line {
+    width: 100%;
+    flex-basis: 100%;
+  }
+
 }

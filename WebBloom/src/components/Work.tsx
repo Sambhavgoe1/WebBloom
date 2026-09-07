@@ -1,111 +1,155 @@
-import { useRef, useState } from 'react'
-
-import jhpVideo from '../assets/jindal-hydro.mp4'
-import autocuroVideo from '../assets/autocuro.mp4'
+import jindalHydroImage from '../assets/jindal-hydro.webp'
+import autocuroImage from '../assets/autocuro.webp'
+import projectThreeImage from '../assets/radhey-ki-rasoi.webp'
+import projectFourImage from '../assets/radhey-ki-rasoi.webp'
 
 interface Project {
+  number: string
   title: string
   type: string
   description: string
-  color: string
-  tag: string
+  image: string
   link: string
-  video: string
+  featured?: boolean
 }
 
 const projects: Project[] = [
   {
+    number: '01',
     title: 'Jindal Hydro Projects',
-    type: 'MANUFACTURING · CORPORATE SITE',
+    type: 'MANUFACTURING · CORPORATE WEBSITE',
     description:
-      'A digital presence for a hydraulic baler and recycling machinery manufacturer, exporting since 1976.',
-    color: 'amber',
-    tag: 'JHP',
+      'A modern digital presence for a hydraulic machinery manufacturer, built to showcase products, engineering capabilities and decades of experience.',
+    image: jindalHydroImage,
     link: 'https://jindalhydro.com/',
-    video: jhpVideo
+    featured: true
   },
   {
+    number: '02',
     title: 'AutoCuro',
-    type: 'DEEP TECH · PCB AUTOMATION',
+    type: 'DEEP TECH · PRODUCT WEBSITE',
     description:
-      'A product site for an AI-driven PCB placement and routing platform built for Altium, KiCad and Cadence.',
-    color: 'violet',
-    tag: 'AC',
-    link: 'https://autocuro.com/',
-    video: autocuroVideo
+      'A modern product experience for an AI-driven PCB placement and routing platform built for the next generation of electronics design.',
+    image: autocuroImage,
+    link: 'https://autocuro.com/'
+  },
+  {
+    number: '03',
+    title: 'Radhey Ki Rasoi',
+    type: 'RESTAURANT · FOOD EXPERIENCE',
+    description:
+      'A warm and visually engaging digital experience designed for a restaurant, bringing its food, atmosphere and personality to life online.',
+    image: projectThreeImage,
+    link: 'https://radhey-ki-rasoi.vercel.app/'
+  },
+  {
+    number: '04',
+    title: 'Project Four',
+    type: 'BRAND · WEB EXPERIENCE',
+    description:
+      'A distinctive website designed to give a growing business a stronger and more memorable presence online.',
+    image: projectFourImage,
+    link: '#'
   }
 ]
 
-function Preview({
-  project,
-  index
-}: {
-  project: Project
-  index: number
-}) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isPlaying, setIsPlaying] = useState(false)
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play()
-      setIsPlaying(true)
+function ProjectCard({ project }: { project: Project }) {
+  const handleClick = () => {
+    if (project.link !== '#') {
+      window.open(
+        project.link,
+        '_blank',
+        'noopener,noreferrer'
+      )
     }
   }
 
   return (
-    <div className={`project-preview ${project.color}`}>
+    <article
+      className={`work-project ${
+        project.featured ? 'featured-project' : ''
+      }`}
+    >
+      <div
+        className="work-image-wrap"
+        onClick={handleClick}
+        role="link"
+        tabIndex={0}
+        onKeyDown={(event) => {
+          if (
+            event.key === 'Enter' &&
+            project.link !== '#'
+          ) {
+            handleClick()
+          }
+        }}
+      >
+        <div className="browser-bar">
+          <div className="browser-dots">
+            <span />
+            <span />
+            <span />
+          </div>
 
-      <div className="preview-top">
-        <span>
-          ● &nbsp;
-          {project.title === 'Jindal Hydro Projects'
-            ? 'jindalhydro.com'
-            : 'autocuro.com'}
-        </span>
+          <span className="browser-label">
+            WEBLOOM / SELECTED WORK
+          </span>
 
-        <span>↗</span>
+          <span className="browser-arrow">↗</span>
+        </div>
+
+        <div className="work-image">
+          <img
+            src={project.image}
+            alt={`${project.title} website preview`}
+          />
+        </div>
+
+        <div className="work-hover">
+          <span>VIEW LIVE WEBSITE</span>
+
+          <div className="work-hover-arrow">
+            ↗
+          </div>
+        </div>
       </div>
 
-      <div className="preview-ui website-video">
+      <div className="work-project-info">
 
-        <video
-          ref={videoRef}
-          src={project.video}
-          muted
-          loop
-          playsInline
-          preload="metadata"
-        />
+        <div className="work-project-main">
+          <span className="work-number">
+            {project.number}
+          </span>
 
-        {!isPlaying && (
-          <button
-            type="button"
-            className="video-play-button"
-            onClick={handlePlay}
-            aria-label={`Play ${project.title} preview`}
+          <h3>{project.title}</h3>
+        </div>
+
+        <div className="work-project-description">
+
+          <p className="project-type">
+            {project.type}
+          </p>
+
+          <p>
+            {project.description}
+          </p>
+
+        </div>
+
+        {project.link !== '#' && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="work-link"
+            aria-label={`Visit ${project.title}`}
           >
-            <span>▶</span>
-          </button>
+            ↗
+          </a>
         )}
 
       </div>
-
-      <div className="preview-footer">
-
-        <span>
-          {isPlaying
-            ? 'LIVE WEBSITE PREVIEW'
-            : 'CLICK TO PLAY'}
-        </span>
-
-        <span>
-          0{index + 1} — 0{projects.length}
-        </span>
-
-      </div>
-
-    </div>
+    </article>
   )
 }
 
@@ -116,83 +160,54 @@ export function Work() {
       <div className="work-heading">
 
         <div>
-
           <div className="section-number">
             02 / SELECTED WORK
           </div>
 
           <h2>
-            Made to be
+            Things we've built.
             <br />
-            <em>remembered.</em>
+            <em>Things that work.</em>
           </h2>
-
         </div>
 
-        <p>
-          A small selection of ambitious ideas we've helped turn into
-          memorable digital experiences.
-        </p>
+        <div className="work-heading-copy">
+          <p>
+            A selection of websites and digital experiences
+            designed and developed with clarity, personality
+            and performance in mind.
+          </p>
+
+          <span>
+            04 PROJECTS · AND GROWING
+          </span>
+        </div>
 
       </div>
 
-      <div className="project-list">
+      <div className="work-showcase">
 
-        {projects.map((p, i) => (
-
-          <article
-            className="project"
-            key={p.title}
-          >
-
-            {/* VIDEO PREVIEW */}
-            <Preview
-              project={p}
-              index={i}
-            />
-
-            <div className="project-info">
-
-              <div>
-
-                <span className="project-index">
-                  0{i + 1}
-                </span>
-
-                <h3>
-                  {p.title}
-                </h3>
-
-              </div>
-
-              <div className="project-description">
-
-                <p className="project-type">
-                  {p.type}
-                </p>
-
-                <p>
-                  {p.description}
-                </p>
-
-              </div>
-
-              {/* OPEN REAL WEBSITE */}
-              <a
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="round-arrow"
-                aria-label={`Visit ${p.title}`}
-              >
-                ↗
-              </a>
-
-            </div>
-
-          </article>
-
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.title}
+            project={project}
+          />
         ))}
+
+      </div>
+
+      <div className="work-bottom-message">
+
+        <span className="work-line" />
+
+        <p>
+          YOUR PROJECT COULD BE
+          <em> NEXT.</em>
+        </p>
+
+        <a href="#contact">
+          LET'S TALK ↗
+        </a>
 
       </div>
 
