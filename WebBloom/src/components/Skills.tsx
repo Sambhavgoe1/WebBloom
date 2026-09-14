@@ -34,7 +34,7 @@ export function Skills() {
           {stack.map((s, i) => (
             <span
               key={s}
-              className={`skill-tag tag-${i}`}
+              className={`skill-tag whitespace-nowrap px-4 py-2 rounded-full tag-${i}`}
             >
               {s}
             </span>

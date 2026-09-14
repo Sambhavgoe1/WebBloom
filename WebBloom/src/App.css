@@ -758,12 +758,21 @@ em {
 
 .skill-tag {
   position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: max-content;
+  min-height: 34px;
+  max-width: none;
+  white-space: nowrap;
   border: 1px solid rgba(144, 183, 255, .34);
-  border-radius: 100px;
-  padding: 8px 13px;
+  border-radius: 9999px;
+  padding: 8px 16px;
   background: rgba(26, 51, 107, .54);
   backdrop-filter: blur(8px);
   font: 11px 'DM Mono';
+  line-height: 1;
   color: #c3d7ff;
   box-shadow: 0 0 25px rgba(61, 120, 255, .11);
   animation: float 5s ease-in-out infinite;
@@ -2241,19 +2250,99 @@ footer a:hover {
     transform: translateY(65px);
   }
 
+  .skills-panel {
+    --orbit-outer: min(320px, calc(100vw - 70px));
+    --orbit-inner: min(210px, calc(100vw - 180px));
+    --orbit-stage-top: calc(37% + 55px);
+    overflow-x: hidden;
+  }
+
   .skills-cloud {
-    top: calc(47% + 55px);
+    width: var(--orbit-outer);
+    height: var(--orbit-outer);
+    left: 50%;
+    right: auto;
+    top: var(--orbit-stage-top);
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+
+  .skills-cloud .skill-tag {
+    animation: none;
+    transform: translate(-50%, -50%);
+  }
+
+  .skills-cloud .tag-0 {
+    left: 50%;
+    top: 5%;
+  }
+
+  .skills-cloud .tag-1 {
+    left: 89%;
+    top: 50%;
+  }
+
+  .skills-cloud .tag-4 {
+    left: 50%;
+    top: 95%;
+  }
+
+  .skills-cloud .tag-7 {
+    left: 11%;
+    top: 50%;
+    width: max-content;
+    height: 34px;
+    min-height: 34px;
+    padding: 8px 16px;
+  }
+
+  .skills-cloud .tag-6 {
+    left: 50%;
+    top: 18%;
+  }
+
+  .skills-cloud .tag-3 {
+    left: 82%;
+    top: 27%;
+  }
+
+  .skills-cloud .tag-8 {
+    left: 82%;
+    top: 73%;
+  }
+
+  .skills-cloud .tag-5 {
+    left: 18%;
+    top: 73%;
+  }
+
+  .skills-cloud .tag-2 {
+    left: 18%;
+    top: 27%;
   }
 
   .skills-panel > .orbit {
-    top: calc(37% + 55px);
+    width: var(--orbit-outer);
+    height: var(--orbit-outer);
+    left: 50%;
+    right: auto;
+    top: var(--orbit-stage-top);
+    transform: translateX(-50%) rotate(-20deg);
   }
 
   .skills-panel > .orbit-b {
-    top: calc(45% + 55px);
+    width: var(--orbit-inner);
+    height: var(--orbit-inner);
+    left: 50%;
+    right: auto;
+    top: calc(var(--orbit-stage-top) + (var(--orbit-outer) - var(--orbit-inner)) / 2);
+    transform: translateX(-50%) rotate(-20deg);
   }
 
   .skills-panel > .core {
-    top: calc(61% + 55px);
+    left: 50%;
+    right: auto;
+    top: calc(var(--orbit-stage-top) + (var(--orbit-outer) - 65px) / 2);
+    transform: translateX(-50%);
   }
 }
