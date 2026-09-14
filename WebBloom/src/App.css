@@ -1568,6 +1568,20 @@ footer a:hover {
     transform 1.2s cubic-bezier(.2,.7,.2,1);
 }
 
+.work-image img.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .work-image img.md\:hidden {
+    display: none;
+  }
+
+  .work-image img.md\:block {
+    display: block;
+  }
+}
+
 .work-image-wrap:hover .work-image img {
   transform: scale(1.035);
 }

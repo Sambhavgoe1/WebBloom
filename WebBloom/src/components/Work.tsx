@@ -104,11 +104,13 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
 
         <div className="work-image">
-          <img
-            src={project.mobileImage}
-            alt={`${project.title} website preview`}
-            className="block md:hidden"
-          />
+          {project.mobileImage && (
+            <img
+              src={project.mobileImage}
+              alt={`${project.title} website preview`}
+              className="block md:hidden"
+            />
+          )}
           <img
             src={project.desktopImage}
             alt={`${project.title} website preview`}
