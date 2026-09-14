@@ -1,7 +1,7 @@
 import jindalHydroImage from '../assets/jindal-hydro.webp'
 import autocuroImage from '../assets/autocuro.webp'
 import projectThreeImage from '../assets/radhey-ki-rasoi.webp'
-import projectFourImage from '../assets/radhey-ki-rasoi.webp'
+import drVandanaImage from '../assets/dr-vandana.png'
 
 interface Project {
   number: string
@@ -44,12 +44,12 @@ const projects: Project[] = [
   },
   {
     number: '04',
-    title: 'Project Four',
-    type: 'BRAND · WEB EXPERIENCE',
+    title: 'Dr. Vandana Malhotra Goel - Medical Portfolio',
+    type: 'MEDICAL · PERSONAL WEBSITE',
     description:
-      'A distinctive website designed to give a growing business a stronger and more memorable presence online.',
-    image: projectFourImage,
-    link: '#'
+      'A modern, responsive personal website for a medical professional, featuring an appointment contact form and built with React, TypeScript, Tailwind CSS, and a Google Sheets backend.',
+    image: drVandanaImage,
+    link: 'https://dr-vandana.vercel.app/'
   }
 ]
 
