@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer>
 
-      <a href="#top" className="brand">
+      <a href="/" className="brand">
         <img
           src={logo}
           alt="Webloom"
@@ -23,9 +23,9 @@ export function Footer() {
       </p>
 
       <div>
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="mailto:hello@webloom.studio">Email →</a>
+        <a href="/#work">Work</a>
+        <a href="/contact">Contact</a>
+        <a href="/start-project">Start a project →</a>
       </div>
 
     </footer>

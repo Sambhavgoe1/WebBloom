@@ -9,5 +9,20 @@ import { Skills } from './components/Skills'
 import { Team } from './components/Team'
 import { WhyWebloom } from './components/WhyWebloom'
 import { Work } from './components/Work'
+import { ContactPage } from './components/ContactPage'
+import { StartProjectPage } from './components/StartProjectPage'
 
-export default function App() { return <main><Navbar /><Hero /><About /><Work /><Services /><Skills /><WhyWebloom /><Team /><CTA /><Footer /></main> }
+function HomePage() {
+	return <><Hero /><About /><Work /><Services /><Skills /><WhyWebloom /><Team /><CTA /></>
+}
+
+export default function App() {
+	const page = window.location.pathname.replace(/\/$/, '')
+	const content = page === '/contact'
+		? <ContactPage />
+		: page === '/start-project'
+			? <StartProjectPage />
+			: <HomePage />
+
+	return <main><Navbar />{content}<Footer /></main>
+}

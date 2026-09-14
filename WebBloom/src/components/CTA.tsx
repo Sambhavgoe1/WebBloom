@@ -21,14 +21,14 @@ export function CTA() {
 
       <a
         className="primary-button light-button"
-        href="mailto:hello@webloom.studio"
+        href="/start-project"
       >
         Start your project <span>→</span>
       </a>
 
       <div className="cta-bottom">
         <span>
-          HELLO@WEBLOOM.STUDIO
+          PREYANSHE@GMAIL.COM · SAMBHAV@GMAIL.COM
         </span>
 
       </div>

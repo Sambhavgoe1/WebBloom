@@ -5,7 +5,7 @@ export function Navbar() {
     <header className="nav-wrap">
       <nav className="nav">
 
-        <a className="brand" href="#top">
+        <a className="brand" href="/">
           <img
             src={logo}
             alt="Webloom"
@@ -16,12 +16,13 @@ export function Navbar() {
         </a>
 
         <div className="nav-links">
-          <a href="#work">Work</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
+          <a href="/#work">Work</a>
+          <a href="/#about">About</a>
+          <a href="/#services">Services</a>
+          <a href="/contact">Contact</a>
         </div>
 
-        <a className="nav-cta" href="#contact">
+        <a className="nav-cta" href="/start-project">
           Start a project <span>→</span>
         </a>
 
