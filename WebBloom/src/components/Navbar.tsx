@@ -1,11 +1,16 @@
 import logo from '../assets/webloom-logo.webp'
+import { useState } from 'react'
 
 export function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header className="nav-wrap">
+    <header className={`nav-wrap ${menuOpen ? 'menu-open' : ''}`}>
       <nav className="nav">
 
-        <a className="brand" href="/">
+        <a className="brand" href="/" onClick={closeMenu}>
           <img
             src={logo}
             alt="Webloom"
@@ -15,16 +20,29 @@ export function Navbar() {
           <span className="brand-text">WEBLOOM</span>
         </a>
 
-        <div className="nav-links">
-          <a href="/#work">Work</a>
-          <a href="/#about">About</a>
-          <a href="/#services">Services</a>
-          <a href="/start-project">Start a project</a>
+        <div className="nav-links" id="site-menu">
+          <a href="/#work" onClick={closeMenu}>Work</a>
+          <a href="/#about" onClick={closeMenu}>About</a>
+          <a href="/#services" onClick={closeMenu}>Services</a>
+          <a href="/start-project" onClick={closeMenu}>Start a project</a>
         </div>
 
         <a className="nav-cta" href="/start-project">
           Start a project <span>→</span>
         </a>
+
+        <button
+          className="menu-toggle"
+          type="button"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="site-menu"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
 
       </nav>
     </header>
