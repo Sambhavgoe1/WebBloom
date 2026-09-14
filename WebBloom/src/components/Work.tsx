@@ -1,7 +1,11 @@
 import jindalHydroImage from '../assets/jindal-hydro.webp'
+import jindalHydroMobileImage from '../assets/jindal-hydor_mobile.jpeg'
 import autocuroImage from '../assets/autocuro.webp'
+import autocuroMobileImage from '../assets/autocuro_mobile.jpeg'
 import projectThreeImage from '../assets/radhey-ki-rasoi.webp'
+import projectThreeMobileImage from '../assets/radhe-ki-rasoi_mobile.jpeg'
 import drVandanaImage from '../assets/dr-vandana.png'
+import drVandanaMobileImage from '../assets/dr-vandana_mobile.jpeg'
 
 interface Project {
   number: string
@@ -21,7 +25,7 @@ const projects: Project[] = [
     type: 'MANUFACTURING · CORPORATE WEBSITE',
     description:
       'A modern digital presence for a hydraulic machinery manufacturer, built to showcase products, engineering capabilities and decades of experience.',
-    mobileImage: '',
+    mobileImage: jindalHydroMobileImage,
     desktopImage: jindalHydroImage,
     link: 'https://jindalhydro.com/',
     featured: true
@@ -32,7 +36,7 @@ const projects: Project[] = [
     type: 'DEEP TECH · PRODUCT WEBSITE',
     description:
       'A modern product experience for an AI-driven PCB placement and routing platform built for the next generation of electronics design.',
-    mobileImage: '',
+    mobileImage: autocuroMobileImage,
     desktopImage: autocuroImage,
     link: 'https://autocuro.com/'
   },
@@ -42,7 +46,7 @@ const projects: Project[] = [
     type: 'RESTAURANT · FOOD EXPERIENCE',
     description:
       'A warm and visually engaging digital experience designed for a restaurant, bringing its food, atmosphere and personality to life online.',
-    mobileImage: '',
+    mobileImage: projectThreeMobileImage,
     desktopImage: projectThreeImage,
     link: 'https://radhey-ki-rasoi.vercel.app/'
   },
@@ -52,7 +56,7 @@ const projects: Project[] = [
     type: 'MEDICAL · PERSONAL WEBSITE',
     description:
       'A modern, responsive personal website for a medical professional, featuring an appointment contact form and built with React, TypeScript, Tailwind CSS, and a Google Sheets backend.',
-    mobileImage: '',
+    mobileImage: drVandanaMobileImage,
     desktopImage: drVandanaImage,
     link: 'https://dr-vandana.vercel.app/'
   }
