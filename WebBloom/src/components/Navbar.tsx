@@ -24,12 +24,8 @@ export function Navbar() {
           <a href="/#work" onClick={closeMenu}>Work</a>
           <a href="/#about" onClick={closeMenu}>About</a>
           <a href="/#services" onClick={closeMenu}>Services</a>
-          <a href="/start-project" onClick={closeMenu}>Start a project</a>
+          <a href="/start-project" onClick={closeMenu}>Contact</a>
         </div>
-
-        <a className="nav-cta" href="/start-project">
-          Start a project <span>→</span>
-        </a>
 
         <button
           className="menu-toggle"

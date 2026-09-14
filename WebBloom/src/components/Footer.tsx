@@ -24,7 +24,7 @@ export function Footer() {
 
       <div>
         <a href="/#work">Work</a>
-        <a href="/start-project">Start a project →</a>
+        <a href="/start-project">Contact →</a>
       </div>
 
     </footer>

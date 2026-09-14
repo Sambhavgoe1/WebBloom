@@ -23,7 +23,7 @@ export function CTA() {
         className="primary-button light-button"
         href="/start-project"
       >
-        Start your project <span>→</span>
+        Contact <span>→</span>
       </a>
 
       <div className="cta-bottom">

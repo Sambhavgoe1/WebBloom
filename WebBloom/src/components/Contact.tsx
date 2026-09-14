@@ -4,8 +4,8 @@ export function StartProjectPage() {
   return (
     <section className="inner-page start-page">
       <div className="inner-page-hero">
-        <div className="section-number">02 / START A PROJECT</div>
-        <h1>Bring us the<br /><em>rough idea.</em></h1>
+        <div className="section-number">01 / CONTACT</div>
+        <h1>Let’s make<br /><em>something matter.</em></h1>
         <p>Meet the people behind Webloom and reach out directly about your next project.</p>
       </div>
 

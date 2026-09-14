@@ -23,7 +23,7 @@ export function StartProjectPage() {
   return (
     <section className="inner-page contact-page">
       <div className="inner-page-hero">
-        <div className="section-number">01 / START A PROJECT</div>
+        <div className="section-number">01 / CONTACT</div>
         <h1>Let’s make<br /><em>something matter.</em></h1>
         <p>Have a question, an early idea, or a project ready to move? Reach the builders directly.</p>
       </div>
