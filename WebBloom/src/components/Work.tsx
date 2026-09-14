@@ -8,7 +8,8 @@ interface Project {
   title: string
   type: string
   description: string
-  image: string
+  mobileImage: string
+  desktopImage: string
   link: string
   featured?: boolean
 }
@@ -20,7 +21,8 @@ const projects: Project[] = [
     type: 'MANUFACTURING · CORPORATE WEBSITE',
     description:
       'A modern digital presence for a hydraulic machinery manufacturer, built to showcase products, engineering capabilities and decades of experience.',
-    image: jindalHydroImage,
+    mobileImage: '',
+    desktopImage: jindalHydroImage,
     link: 'https://jindalhydro.com/',
     featured: true
   },
@@ -30,7 +32,8 @@ const projects: Project[] = [
     type: 'DEEP TECH · PRODUCT WEBSITE',
     description:
       'A modern product experience for an AI-driven PCB placement and routing platform built for the next generation of electronics design.',
-    image: autocuroImage,
+    mobileImage: '',
+    desktopImage: autocuroImage,
     link: 'https://autocuro.com/'
   },
   {
@@ -39,7 +42,8 @@ const projects: Project[] = [
     type: 'RESTAURANT · FOOD EXPERIENCE',
     description:
       'A warm and visually engaging digital experience designed for a restaurant, bringing its food, atmosphere and personality to life online.',
-    image: projectThreeImage,
+    mobileImage: '',
+    desktopImage: projectThreeImage,
     link: 'https://radhey-ki-rasoi.vercel.app/'
   },
   {
@@ -48,7 +52,8 @@ const projects: Project[] = [
     type: 'MEDICAL · PERSONAL WEBSITE',
     description:
       'A modern, responsive personal website for a medical professional, featuring an appointment contact form and built with React, TypeScript, Tailwind CSS, and a Google Sheets backend.',
-    image: drVandanaImage,
+    mobileImage: '',
+    desktopImage: drVandanaImage,
     link: 'https://dr-vandana.vercel.app/'
   }
 ]
@@ -100,8 +105,14 @@ function ProjectCard({ project }: { project: Project }) {
 
         <div className="work-image">
           <img
-            src={project.image}
+            src={project.mobileImage}
             alt={`${project.title} website preview`}
+            className="block md:hidden"
+          />
+          <img
+            src={project.desktopImage}
+            alt={`${project.title} website preview`}
+            className="hidden md:block"
           />
         </div>
 
