@@ -19,7 +19,7 @@ export function Navbar() {
           <a href="/#work">Work</a>
           <a href="/#about">About</a>
           <a href="/#services">Services</a>
-          <a href="/contact">Contact</a>
+          <a href="/start-project">Start a project</a>
         </div>
 
         <a className="nav-cta" href="/start-project">

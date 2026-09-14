@@ -9,7 +9,6 @@ import { Skills } from './components/Skills'
 import { Team } from './components/Team'
 import { WhyWebloom } from './components/WhyWebloom'
 import { Work } from './components/Work'
-import { ContactPage } from './components/ContactPage'
 import { StartProjectPage } from './components/StartProjectPage'
 
 function HomePage() {
@@ -18,11 +17,7 @@ function HomePage() {
 
 export default function App() {
 	const page = window.location.pathname.replace(/\/$/, '')
-	const content = page === '/contact'
-		? <ContactPage />
-		: page === '/start-project'
-			? <StartProjectPage />
-			: <HomePage />
+	const content = page === '' ? <HomePage /> : <StartProjectPage />
 
 	return <main><Navbar />{content}<Footer /></main>
 }

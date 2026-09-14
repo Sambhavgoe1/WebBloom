@@ -1,24 +1,49 @@
-import { builders } from './ContactPage'
+const builders = [
+  {
+    initials: 'PJ',
+    name: 'Preyanshe Jindal',
+    phone: '9868247245',
+    email: 'pre13305@gmail.com',
+    accent: 'blue',
+    role: 'DESIGN · DIRECTION'
+  },
+  {
+    initials: 'SG',
+    name: 'Sambhav Goel',
+    phone: '9540099098',
+    email: 'sambhav.goel.03@gmail.com',
+    accent: 'indigo',
+    role: 'DEVELOPMENT · BUILD'
+  }
+]
+
+export { builders }
 
 export function StartProjectPage() {
   return (
-    <section className="inner-page start-page">
+    <section className="inner-page contact-page">
       <div className="inner-page-hero">
-        <div className="section-number">02 / START A PROJECT</div>
-        <h1>Bring us the<br /><em>rough idea.</em></h1>
-        <p>Meet the people behind Webloom and reach out directly about your next project.</p>
+        <div className="section-number">01 / START A PROJECT</div>
+        <h1>Let’s make<br /><em>something matter.</em></h1>
+        <p>Have a question, an early idea, or a project ready to move? Reach the builders directly.</p>
       </div>
 
-      <div className="builders-strip">
-        <div><div className="section-number">MEET THE BUILDERS</div><h2>Two minds,<br /><em>one craft.</em></h2></div>
-        <div className="builder-list">
-          {builders.map((builder) => <div className="builder-row" id={builder.initials} key={builder.email}>
-            <span className={`builder-mark ${builder.accent}`}>{builder.initials}</span>
-            <span><strong>{builder.name}</strong><small>{builder.role}</small><span className="builder-contact"><a href={`tel:${builder.phone}`}>{builder.phone}</a><a href={`mailto:${builder.email}`}>{builder.email}</a></span></span>
-            <b>→</b>
-          </div>)}
-        </div>
+      <div className="contact-grid">
+        {builders.map((builder) => (
+          <article id={builder.initials} className={`contact-card ${builder.accent}`} key={builder.email}>
+            <div className="contact-card-visual"><span>{builder.initials}</span><small>// WEBLOOM<br />BUILDER</small></div>
+            <div className="contact-card-body">
+              <div><p className="eyebrow-left">{builder.role}</p><h2>{builder.name}</h2></div>
+              <div className="contact-details">
+                <a href={`tel:${builder.phone}`}>{builder.phone}</a>
+                <a href={`mailto:${builder.email}`}>{builder.email}</a>
+              </div>
+            </div>
+          </article>
+        ))}
       </div>
+
+      <div className="page-return"><a className="under-link" href="/">Back to Webloom <b>→</b></a></div>
     </section>
   )
 }
